@@ -1,4 +1,4 @@
-def binary_search(list, item):
+def binary_search(list, answer):
     # low and high keep track of which part of the list you'll search in
     low = 0
     high = len(list) - 1
@@ -9,20 +9,22 @@ def binary_search(list, item):
         mid = (low + high) // 2
         guess = list[mid]
 
-        # CASE 1: found the item
-        if guess == item:
+        # CASE 1: found the answer
+        if guess == answer:
             return mid
         # CASE 2: too low
-        if guess < item:
+        if guess < answer:
             low = mid + 1
         # CASE 3: too high
-        if guess > item:
+        if guess > answer:
             high = mid - 1
 
     return None
 
-my_list = [1, 3, 5, 7, 9]
 
-print(binary_search(my_list, 3)) # => 1
-print(binary_search(my_list, -1)) # => None
-print(binary_search(my_list, 9)) # => 4
+my_list = [1, 3, 5, 7, 9]
+#          0  1  2  3  4
+
+print(binary_search(my_list, 3))  # => 1
+print(binary_search(my_list, -1))  # => None
+print(binary_search(my_list, 9))  # => 4

@@ -15,7 +15,7 @@ def find_smallest_idx(arr):
 def selection_sort(arr):
     new_arr = []
 
-    # for every character, add the smallest to the new array
+    # for every number, add the smallest to the new array
     for _ in range(len(arr)):
         smallest_idx = find_smallest_idx(arr)
         smallest = arr.pop(smallest_idx)
@@ -26,4 +26,4 @@ def selection_sort(arr):
 
 
 my_list = [5, 3, 6, 2, 10]
-print(selection_sort(my_list)) # => [2, 3, 5, 6, 10]
+print(selection_sort(my_list))  # => [2, 3, 5, 6, 10]
