@@ -1,11 +1,17 @@
+import random
+
+
 def quicksort(array):
+    # if the length of the array is less than 2, return the array
     if len(array) < 2:
         return array
     else:
-        pivot = array[0]
-        less = [i for i in array[1:] if i <= pivot]
-        greater = [i for i in array[1:] if i > pivot]
+        # create a pivot point
+        pivot = random.choice(array)
+        less = [i for i in array[1:] if i <= pivot]  # gather all numbers <= the pivot
+        greater = [i for i in array[1:] if i > pivot]  # gather all numbers > the pivot
 
+        # return the less array, pivot, then greater array (...so it's sorted!)
         return quicksort(less) + [pivot] + quicksort(greater)
 
 
